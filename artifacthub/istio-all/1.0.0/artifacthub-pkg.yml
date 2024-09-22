@@ -1,0 +1,130 @@
+  
+# Artifact Hub package metadata file
+version: 1.0.0
+name: istio-all
+alternativeName: istio-all
+category: Networking, Monitoring and logging
+displayName: All of Istio components along with minimal kiali and prometheus.
+createdAt: "2024-09-22T16:28:51.341127-04:00"
+description: A Helm chart to insall all Istio Components, along with minimal kiali
+  and prometheus in Kubernetes Cluster
+logoURL: https://code4devs.github.io/logo.png
+# digest: String that uniquely identifies this package version (optional)
+# license: SPDX identifier of the package license (https://spdx.org/licenses/) (optional)
+homeURL:  https://code4devs.github.io/
+appVersion: 1.23.2
+# containersImages: # (optional)
+#   - name: Image identifier (optional)
+#     image: The format should match ${REGISTRYHOST}/${USERNAME}/${NAME}:${TAG}
+#     whitelisted: When set to true, this image won't be scanned for security vulnerabilities
+#     platforms: # (optional)
+#       - A list of platforms supported by this image (linux/amd64, etc)
+containsSecurityUpdates: false
+operator: false
+deprecated: false
+prerelease: true
+keywords:
+  - istio
+  - istio-gateway
+  - istio-cni
+  - kiali-server
+  - prometheus
+  - Observability
+  - Monitoring
+  - service-mesh
+# links: # (optional)
+#   - name: Title of the link (required for each link)
+#     url: URL of the link (required for each link)
+
+# changes: # (optional - it is also possible to provide a list of strings with just the descriptions instead of using objects)
+#   - kind: added # Supported kinds are: added, changed, deprecated, removed, fixed and security
+#     description: cool feature
+#     links:
+#       - name: GitHub Issue
+#         url: https://github.com/issue-url
+#       - name: GitHub PR
+#         url: https://github.com/pr-url
+#   - kind: fixed
+#     description: minor bug
+#     links:
+#       - name: GitHub Issue
+#         url: https://github.com/issue-url
+maintainers: # (optional)
+  - name: code4devs
+    email: code4devs@outlook.com
+  - name: anumalasri
+    email: anumalasri@gmail.com
+provider: # (optional)
+  name: code4devs
+ignore: # (optional, used to ignore some falco rules or opa policies files in a package)
+  - lib # Entries use .gitignore syntax)
+recommendations: # (optional, list of recommended packages)
+  - url: https://code4devs.github.io/
+# screenshots: # (optional, list of screenshots)
+#   - title: Sample screenshot 1
+#     url: https://example.com/screenshot1.jpg
+#   - title: Sample screenshot 2
+#     url: https://example.com/screenshot2.jpg
+annotations: # (optional, keys and values must be strings)
+  artifacthub.io/category: Networking, Monitoring and logging
+  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/license: Apache License 2.0
+
+
+apiVersion: v2
+appVersion: 1.23.2
+created: "2024-09-22T16:28:51.341127-04:00"
+dependencies:
+- name: base
+  repository: https://istio-release.storage.googleapis.com/charts
+  version: 1.23.2
+- name: istiod
+  repository: https://istio-release.storage.googleapis.com/charts
+  version: 1.23.2
+- condition: ztunnel.enabled
+  name: ztunnel
+  repository: https://istio-release.storage.googleapis.com/charts
+  version: 1.23.2
+- condition: cni.enabled
+  name: cni
+  repository: https://istio-release.storage.googleapis.com/charts
+  version: 1.23.2
+- alias: ingressgateway
+  condition: ingressgateway.enabled
+  name: gateway
+  repository: https://istio-release.storage.googleapis.com/charts
+  version: 1.23.2
+- alias: egressgateway
+  condition: egressgateway.enabled
+  name: gateway
+  repository: https://istio-release.storage.googleapis.com/charts
+  version: 1.23.2
+- alias: kiali
+  condition: kiali.enabled
+  name: kiali-server
+  repository: https://kiali.org/helm-charts
+  version: 1.89.3
+- condition: prometheus.enabled
+  name: prometheus
+  repository: https://prometheus-community.github.io/helm-charts
+  version: 25.27.0
+description: A Helm chart to insall all Istio Components, along with minimal kiali
+  and prometheus in Kubernetes Cluster
+digest: 9240712e760fe472f190825ebe18e47dd80329dd7111b9b755b24dcbd3622b2b
+icon: https://code4devs.github.io/logo.png
+keywords:
+  - istio
+  - istio-gateway
+  - istio-cni
+  - kiali-server
+  - prometheus
+  - Observability
+  - Monitoring
+  - service-mesh
+kubeVersion: '>=1.27.0'
+name: istio-all
+type: application
+urls:
+- istio-all/istio-all-1.0.0.tgz
+version: 1.0.0
+generated: "2024-09-22T16:28:51.316782-04:00"
