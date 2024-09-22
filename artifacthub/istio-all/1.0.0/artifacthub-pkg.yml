@@ -66,65 +66,6 @@ recommendations: # (optional, list of recommended packages)
 #   - title: Sample screenshot 2
 #     url: https://example.com/screenshot2.jpg
 annotations: # (optional, keys and values must be strings)
-  artifacthub.io/category: Networking, Monitoring and logging
+  artifacthub.io/category: networking
   artifacthub.io/containsSecurityUpdates: "false"
-  artifacthub.io/license: Apache License 2.0
-
-
-apiVersion: v2
-appVersion: 1.23.2
-created: "2024-09-22T16:28:51.341127-04:00"
-dependencies:
-- name: base
-  repository: https://istio-release.storage.googleapis.com/charts
-  version: 1.23.2
-- name: istiod
-  repository: https://istio-release.storage.googleapis.com/charts
-  version: 1.23.2
-- condition: ztunnel.enabled
-  name: ztunnel
-  repository: https://istio-release.storage.googleapis.com/charts
-  version: 1.23.2
-- condition: cni.enabled
-  name: cni
-  repository: https://istio-release.storage.googleapis.com/charts
-  version: 1.23.2
-- alias: ingressgateway
-  condition: ingressgateway.enabled
-  name: gateway
-  repository: https://istio-release.storage.googleapis.com/charts
-  version: 1.23.2
-- alias: egressgateway
-  condition: egressgateway.enabled
-  name: gateway
-  repository: https://istio-release.storage.googleapis.com/charts
-  version: 1.23.2
-- alias: kiali
-  condition: kiali.enabled
-  name: kiali-server
-  repository: https://kiali.org/helm-charts
-  version: 1.89.3
-- condition: prometheus.enabled
-  name: prometheus
-  repository: https://prometheus-community.github.io/helm-charts
-  version: 25.27.0
-description: A Helm chart to insall all Istio Components, along with minimal kiali
-  and prometheus in Kubernetes Cluster
-digest: 9240712e760fe472f190825ebe18e47dd80329dd7111b9b755b24dcbd3622b2b
-icon: https://code4devs.github.io/logo.png
-keywords:
-  - istio
-  - istio-gateway
-  - istio-cni
-  - kiali-server
-  - prometheus
-  - Observability
-  - Monitoring
-  - service-mesh
-kubeVersion: '>=1.27.0'
-name: istio-all
-type: application
-urls:
-- istio-all/istio-all-1.0.0.tgz
-version: 1.0.0
-generated: "2024-09-22T16:28:51.316782-04:00"
+  artifacthub.io/license: "Apache-2.0"
