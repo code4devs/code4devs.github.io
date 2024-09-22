@@ -3,7 +3,7 @@
 version: 1.0.0
 name: istio-all
 alternativeName: istio-all
-category: Networking, Monitoring and logging
+category: networking
 displayName: All of Istio components along with minimal kiali and prometheus.
 createdAt: "2024-09-22T16:28:51.341127-04:00"
 description: A Helm chart to insall all Istio Components, along with minimal kiali
