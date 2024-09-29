@@ -7,7 +7,7 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 1.23.2
-    created: "2024-09-22T18:38:53.539709-04:00"
+    created: "2024-09-28T21:59:54.523698-04:00"
     dependencies:
     - name: base
       repository: https://istio-release.storage.googleapis.com/charts
@@ -44,7 +44,68 @@ entries:
       version: 25.27.0
     description: A Helm chart to insall all Istio Components, along with minimal kiali
       and prometheus in Kubernetes Cluster
-    digest: c26beefd442150c1b3dc6110fbf6b93864b42976d507eb386a194b1f275fe081
+    digest: 07bf6d25d121649a559d58dcba755195cfe1661b54778826bb96589d3c1e9f9d
+    icon: https://code4devs.github.io/logo.png
+    keywords:
+    - istio
+    - istio-gateway
+    - istio-cni
+    - ztunnel
+    - kiali-server
+    - prometheus
+    - Observability
+    - Monitoring
+    - service-mesh
+    kubeVersion: '>=1.27.0'
+    name: istio-all
+    type: application
+    urls:
+    - istio-all/istio-all-1.1.0.tgz
+    version: 1.1.0
+  - annotations:
+      artifacthub.io/category: networking
+      artifacthub.io/containsSecurityUpdates: "false"
+      artifacthub.io/license: Apache-2.0
+    apiVersion: v2
+    appVersion: 1.23.2
+    created: "2024-09-28T21:59:54.489683-04:00"
+    dependencies:
+    - name: base
+      repository: https://istio-release.storage.googleapis.com/charts
+      version: 1.23.2
+    - name: istiod
+      repository: https://istio-release.storage.googleapis.com/charts
+      version: 1.23.2
+    - condition: ztunnel.enabled
+      name: ztunnel
+      repository: https://istio-release.storage.googleapis.com/charts
+      version: 1.23.2
+    - condition: cni.enabled
+      name: cni
+      repository: https://istio-release.storage.googleapis.com/charts
+      version: 1.23.2
+    - alias: ingressgateway
+      condition: ingressgateway.enabled
+      name: gateway
+      repository: https://istio-release.storage.googleapis.com/charts
+      version: 1.23.2
+    - alias: egressgateway
+      condition: egressgateway.enabled
+      name: gateway
+      repository: https://istio-release.storage.googleapis.com/charts
+      version: 1.23.2
+    - alias: kiali
+      condition: kiali.enabled
+      name: kiali-server
+      repository: https://kiali.org/helm-charts
+      version: 1.89.3
+    - condition: prometheus.enabled
+      name: prometheus
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 25.27.0
+    description: A Helm chart to insall all Istio Components, along with minimal kiali
+      and prometheus in Kubernetes Cluster
+    digest: 3a87dc371b1cf604a78c577a44830a71a979c2267a820a9999a123eed1559144
     icon: https://code4devs.github.io/logo.png
     keywords:
     - istio
@@ -61,4 +122,4 @@ entries:
     urls:
     - istio-all/istio-all-1.0.0.tgz
     version: 1.0.0
-generated: "2024-09-22T18:38:53.515207-04:00"
+generated: "2024-09-28T21:59:54.451354-04:00"
