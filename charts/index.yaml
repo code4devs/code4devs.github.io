@@ -6,8 +6,48 @@ entries:
       artifacthub.io/containsSecurityUpdates: "false"
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
+    appVersion: 1.24.2
+    created: "2024-12-28T14:40:35.114451-05:00"
+    dependencies:
+    - name: ambient
+      repository: https://istio-release.storage.googleapis.com/charts
+      version: 1.24.2
+    - alias: kiali
+      condition: kiali.enabled
+      name: kiali-server
+      repository: https://kiali.org/helm-charts
+      version: 1.89.3
+    - condition: prometheus.enabled
+      name: prometheus
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 25.27.0
+    description: A Helm chart to insall all Istio Components, along with minimal kiali
+      and prometheus in Kubernetes Cluster
+    digest: ba9a8b69b71ffda6a8c48fba036f241dc6f1af76cccbc700b70151b460446648
+    icon: https://code4devs.github.io/logo.png
+    keywords:
+    - istio
+    - ambient
+    - istio-cni
+    - ztunnel
+    - kiali-server
+    - prometheus
+    - Observability
+    - Monitoring
+    - service-mesh
+    kubeVersion: '>=1.27.0'
+    name: istio-all
+    type: application
+    urls:
+    - istio-all/istio-all-1.2.0.tgz
+    version: 1.2.0
+  - annotations:
+      artifacthub.io/category: networking
+      artifacthub.io/containsSecurityUpdates: "false"
+      artifacthub.io/license: Apache-2.0
+    apiVersion: v2
     appVersion: 1.23.2
-    created: "2024-09-28T21:59:54.523698-04:00"
+    created: "2024-12-28T14:40:35.091487-05:00"
     dependencies:
     - name: base
       repository: https://istio-release.storage.googleapis.com/charts
@@ -68,7 +108,7 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 1.23.2
-    created: "2024-09-28T21:59:54.489683-04:00"
+    created: "2024-12-28T14:40:35.067642-05:00"
     dependencies:
     - name: base
       repository: https://istio-release.storage.googleapis.com/charts
@@ -122,4 +162,4 @@ entries:
     urls:
     - istio-all/istio-all-1.0.0.tgz
     version: 1.0.0
-generated: "2024-09-28T21:59:54.451354-04:00"
+generated: "2024-12-28T14:40:35.043233-05:00"
