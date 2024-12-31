@@ -7,7 +7,7 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 1.24.2
-    created: "2024-12-28T14:40:35.114451-05:00"
+    created: "2024-12-31T15:55:22.714669-05:00"
     dependencies:
     - name: ambient
       repository: https://istio-release.storage.googleapis.com/charts
@@ -47,7 +47,7 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 1.23.2
-    created: "2024-12-28T14:40:35.091487-05:00"
+    created: "2024-12-31T15:55:22.689798-05:00"
     dependencies:
     - name: base
       repository: https://istio-release.storage.googleapis.com/charts
@@ -108,7 +108,7 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 1.23.2
-    created: "2024-12-28T14:40:35.067642-05:00"
+    created: "2024-12-31T15:55:22.663076-05:00"
     dependencies:
     - name: base
       repository: https://istio-release.storage.googleapis.com/charts
@@ -162,4 +162,79 @@ entries:
     urls:
     - istio-all/istio-all-1.0.0.tgz
     version: 1.0.0
-generated: "2024-12-28T14:40:35.043233-05:00"
+  istio-control-plane:
+  - annotations:
+      artifacthub.io/category: networking
+      artifacthub.io/containsSecurityUpdates: "false"
+      artifacthub.io/license: Apache-2.0
+    apiVersion: v2
+    appVersion: 1.24.2
+    created: "2024-12-31T15:55:22.725513-05:00"
+    dependencies:
+    - name: ambient
+      repository: https://istio-release.storage.googleapis.com/charts
+      version: 1.24.2
+    description: A Helm chart to insall all Istio Control Panel in Kubernetes Cluster
+    digest: f99d86aa9af1a2f860ff3f4e9800fd2e196589682d05baf6b757dba8e7600356
+    icon: https://code4devs.github.io/logo.png
+    keywords:
+    - istio
+    - ambient
+    - istio-cni
+    - ztunnel
+    - service-mesh
+    kubeVersion: '>=1.28.0'
+    name: istio-control-plane
+    type: application
+    urls:
+    - istio-control-plane/istio-control-plane-1.0.0.tgz
+    version: 1.0.0
+  istio-data-plane:
+  - annotations:
+      artifacthub.io/category: networking
+      artifacthub.io/containsSecurityUpdates: "false"
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/crds: https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.2.1/standard-install.yaml
+    apiVersion: v2
+    appVersion: 1.24.2
+    created: "2024-12-31T15:55:22.746169-05:00"
+    dependencies:
+    - condition: ingressgateway.enabled
+      name: ingressgateway
+      repository: ""
+      version: 1.2.0
+    - alias: egressgateway
+      condition: egressgateway.enabled
+      name: egress-waypoint
+      repository: ""
+      version: 1.0.0
+    - alias: kiali
+      condition: global.monitoring.enabled
+      name: kiali-server
+      repository: https://kiali.org/helm-charts
+      version: 2.3.0
+    - condition: global.monitoring.enabled
+      name: prometheus
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 26.0.1
+    description: A Helm chart to insall all Istio Components, along with minimal kiali
+      and prometheus in Kubernetes Cluster
+    digest: d9dec0d8bd2e12a7dc15d8ee742b082eb1a3a54f64f661c657be74dd7a975b9e
+    icon: https://code4devs.github.io/logo.png
+    keywords:
+    - istio
+    - ambient
+    - istio-cni
+    - ztunnel
+    - kiali-server
+    - prometheus
+    - Observability
+    - Monitoring
+    - service-mesh
+    kubeVersion: '>=1.28.0'
+    name: istio-data-plane
+    type: application
+    urls:
+    - istio-data-plane/istio-data-plane-1.0.0.tgz
+    version: 1.0.0
+generated: "2024-12-31T15:55:22.636906-05:00"
