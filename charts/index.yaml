@@ -193,7 +193,6 @@ entries:
   - annotations:
       artifacthub.io/category: networking
       artifacthub.io/containsSecurityUpdates: "false"
-      artifacthub.io/crds: https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.2.1/standard-install.yaml
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 1.24.2
