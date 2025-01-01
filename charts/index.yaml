@@ -7,7 +7,7 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 1.24.2
-    created: "2024-12-31T16:33:31.663658-05:00"
+    created: "2025-01-01T18:43:27.214068-05:00"
     dependencies:
     - name: ambient
       repository: https://istio-release.storage.googleapis.com/charts
@@ -47,7 +47,7 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 1.23.2
-    created: "2024-12-31T16:33:31.626036-05:00"
+    created: "2025-01-01T18:43:27.189047-05:00"
     dependencies:
     - name: base
       repository: https://istio-release.storage.googleapis.com/charts
@@ -108,7 +108,7 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 1.23.2
-    created: "2024-12-31T16:33:31.590706-05:00"
+    created: "2025-01-01T18:43:27.161415-05:00"
     dependencies:
     - name: base
       repository: https://istio-release.storage.googleapis.com/charts
@@ -169,7 +169,7 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 1.24.2
-    created: "2024-12-31T16:33:31.676854-05:00"
+    created: "2025-01-01T18:43:27.225182-05:00"
     dependencies:
     - name: ambient
       repository: https://istio-release.storage.googleapis.com/charts
@@ -196,7 +196,7 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 1.24.2
-    created: "2024-12-31T16:33:31.701975-05:00"
+    created: "2025-01-01T18:43:27.245941-05:00"
     dependencies:
     - condition: ingressgateway.enabled
       name: ingressgateway
@@ -218,7 +218,7 @@ entries:
       version: 26.0.1
     description: A Helm chart to insall all Istio Components, along with minimal kiali
       and prometheus in Kubernetes Cluster
-    digest: 90d30b1ce172f0884a43405d62a57cf5dad24889b21fa76cd9e4621ae428498b
+    digest: fe1314a225c0579dd8caa336bd9b0265bf477bb54b1d172d86e0a16d89432cf8
     icon: https://code4devs.github.io/logo.png
     keywords:
     - istio
@@ -236,4 +236,4 @@ entries:
     urls:
     - istio-data-plane/istio-data-plane-1.0.0.tgz
     version: 1.0.0
-generated: "2024-12-31T16:33:31.551579-05:00"
+generated: "2025-01-01T18:43:27.130633-05:00"
